@@ -9,9 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.servlet.http.HttpServletRequest;
 import java.net.URI;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -25,7 +25,8 @@ public class SurveyController {
     }
 
     @GetMapping("/surveys")
-    public List<Survey> getAllSurveys(){
+    public List<Survey> getAllSurveys(HttpServletRequest request){
+
         return surveyService.retriveAllSurveys();
     }
 

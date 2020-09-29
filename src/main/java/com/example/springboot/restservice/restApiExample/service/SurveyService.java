@@ -40,19 +40,24 @@ public class SurveyService {
     }
 
     public Survey retrieveSurvey(String id){
-        return surveys.stream().filter(survey -> survey.getId().equals(id)).findFirst().orElse(null);
+        return surveys.stream()
+                .filter(survey -> survey.getId().equals(id))
+                .findFirst().orElse(null);
     }
 
     public List<Question> retrieveQuestions(String surveyId){
         return Objects.requireNonNull(
                 surveys.stream()
                         .filter(survey -> survey.getId().equals(surveyId))
-                        .findFirst().orElse(null)).getQuestions();
+                        .findFirst().orElse(null))
+                .getQuestions();
     }
 
     public Question retrieveQuestion(String surveyId, String questionId){
         return Objects.requireNonNull(retrieveQuestions(surveyId)
-                .stream().filter(question -> question.getId().equals(questionId)).findFirst().orElse(null));
+                .stream()
+                .filter(question -> question.getId().equals(questionId))
+                .findFirst().orElse(null));
     }
 
     public boolean addSurvey(Survey survey){
@@ -61,8 +66,10 @@ public class SurveyService {
 
     public List<Question> addQuestionsToSurvey(String idSurvey, List<Question> newQuestions){
         boolean isAdd = Objects.requireNonNull(surveys.stream()
-                .filter(s -> s.getId().equals(idSurvey)).findFirst().orElse(null))
-                .getQuestions().addAll(newQuestions);
+                .filter(s -> s.getId().equals(idSurvey))
+                .findFirst().orElse(null))
+                .getQuestions()
+                .addAll(newQuestions);
         if(isAdd){
             return newQuestions;
         }
