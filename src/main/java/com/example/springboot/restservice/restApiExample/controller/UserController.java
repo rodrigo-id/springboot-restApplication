@@ -34,7 +34,7 @@ public class UserController {
     @ResponseStatus(HttpStatus.CREATED)
     public List<ResponseEntity<?>> addUsers(@RequestBody List<User> users){
         List<User> createdUsers = userService.addUsers(users);
-        if (createdUsers == null){
+        if (createdUsers == null || createdUsers.size() <=0){
             return Collections.singletonList(ResponseEntity.noContent().build());
         }
 
