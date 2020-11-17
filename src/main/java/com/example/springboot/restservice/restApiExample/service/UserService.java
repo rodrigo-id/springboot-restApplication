@@ -33,4 +33,8 @@ public class UserService {
                         .collect(Collectors.toList())
         );
     }
+
+    public List<User> retrieveUsersByRol(String rol){
+        return userRepository.findByRol(rol);
+    }
 }

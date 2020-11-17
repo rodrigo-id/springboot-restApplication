@@ -48,4 +48,10 @@ public class UserController {
         });
         return responseEntities;
     }
+
+    @GetMapping("/users/search")
+    public List<User> retrieveUsersRol(@RequestParam("rol") String rol){
+        //transforma la url en ejemplo http://localhost:8080/users/search?rol=mama
+        return userService.retrieveUsersByRol(rol);
+    }
 }
