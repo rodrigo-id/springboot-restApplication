@@ -4,9 +4,6 @@ import com.example.springboot.restservice.restApiExample.model.Question;
 import com.example.springboot.restservice.restApiExample.model.Survey;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-
 import java.util.Arrays;
 
 
