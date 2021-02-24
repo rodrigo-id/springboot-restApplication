@@ -23,7 +23,7 @@ http://localhost:8080/users-rest-data/search/findByRol?rol=mama
 
 //path expone la ruta, collectionsResourcesRel muestra los links generados para las consultas realizadas
 @RepositoryRestResource(path="users-rest-data", collectionResourceRel = "users")
-public interface UserRestRepository extends PagingAndSortingRepository<User, Long> {
+public interface ImpUserRepository extends PagingAndSortingRepository<User, Long> {
     /*
     * Creamos un metodo que especificamenete retorna los usuarios buscando por un rol especifico.
     * Esto funciona con la magia de spring donde al usar las palabras claves 'findBy{NombreColumna}'

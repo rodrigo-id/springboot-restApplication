@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Long> {
+public interface IUserRepository extends CrudRepository<User, Long> {
     /*
     * Creamos un metodo que especificamenete retorna los usuarios buscando por un rol especifico.
     * Esto funciona con la magia de spring donde al usar las palabras claves 'findBy{NombreColumna}'

@@ -14,21 +14,21 @@ public class UserCommandLineRunner implements CommandLineRunner {
     private static final Logger log = LoggerFactory.getLogger(UserCommandLineRunner.class);
 
     @Autowired
-    private UserRepository userRepository;
+    private IUserRepository IUserRepository;
 
     @Override
     public void run(String... args) throws Exception {
-        userRepository.save(new User("Alison", "mama"));
-        userRepository.save(new User("Mia", "hijo"));
-        userRepository.save(new User("Rodrigo", "papa"));
-        userRepository.save(new User("Leon", "hijo"));
-        userRepository.save(new User("Leonor", "mama"));
+        IUserRepository.save(new User("Alison", "mama"));
+        IUserRepository.save(new User("Mia", "hijo"));
+        IUserRepository.save(new User("Rodrigo", "papa"));
+        IUserRepository.save(new User("Leon", "hijo"));
+        IUserRepository.save(new User("Leonor", "mama"));
 
         log.info("-----------START--------------");
         log.info("muestra todos los usuarios por defecto");
-        userRepository.findAll().forEach(user -> log.info(user.toString()));
+        IUserRepository.findAll().forEach(user -> log.info(user.toString()));
         log.info("muestra todos los usuarios por rol mama");
-        userRepository.findByRol("mama").forEach(user -> log.info(user.toString()));
+        IUserRepository.findByRol("mama").forEach(user -> log.info(user.toString()));
 
         log.info("------------END-------------");
     }
