@@ -26,7 +26,6 @@ public class SurveyController {
 
     @GetMapping("/surveys")
     public List<Survey> getAllSurveys(HttpServletRequest request){
-
         return surveyService.retriveAllSurveys();
     }
 
