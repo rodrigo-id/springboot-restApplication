@@ -63,6 +63,11 @@
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
 
+		<!-- Cuando se añade esta dependencia todos los metodos controllers solicitaran permisos para poder ver su contenido al llamar los endpoint
+			para no obtener el status code 401 debemos agregar a la cabecera de nuestras peticiones (en postman por ejemplo) la basic authentication
+			donde el username seria 'user' y la password vendria siendo la generada por consola al momento de arrancar el poyecto (buscar en la consola
+			por 'security password')
+		-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
